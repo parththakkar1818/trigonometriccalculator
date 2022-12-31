@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trigonometric Calculator</title>
+	<style>
+		#a2{
+			font-size: 200% ;
+		}
+		#a1{
+			font-size: 300% ; 
+			border: 4px solid black;
+			color: green ;
+			border-color: red ;
+			border-style: dashed;
+			text-align: center;
+			background-color: yellow;
+		}
+		#a4{
+			background-color:lightyellow; 
+			border: 6px solid black;
+			color: black ;
+			border-color: black ;
+			width: 50%;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+		#a7{
+			font-size: 200%;
+			font-family: Engravers MT ;
+			text-align: center;
+
+		}
+	</style>
+</head>
+<br>
+<body bgcolor="lightblue">
+	<h1 id="a1">Trigonometric Calculator</h1>
+	<table id="a4" >
+		<tr>
+			<td>
+				<h1 id="a5">Select Trigonometric Ratio</h1>				
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<select id="a2">
+					<option> sin </option>
+					<option> cos </option>
+					<option> tan </option>
+					<option> sec </option>
+					<option> cosec </option>
+					<option> cot </option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2 style="text-align: center;">Input Your Angle:- </h2>  
+			
+				<input id="a6" type="number" placeholder="Angle in degree" style = "width : 98% ; height: 30px ; ">
+			</td>
+		</tr>
+		<tr><td> <br> </td></tr>
+		<tr>
+
+			<td>
+				<button id="a6" onclick="abc()">Calculate</button>
+			</td>
+		</tr>
+		<tr><td> <br> </td></tr>
+		<tr>
+			<td>
+				<h1 id="a7"></h1>
+			</td>
+		</tr>
+	</table>
+</body>
+<script>
+	function abc() {
+		var an = document.getElementById('a6').value
+		var an1=an
+		var an = an*Math.PI/180
+		var t = document.getElementById('a2').value
+		console.log(t)
+		
+		if (t == 'sin') {
+			var ans = Math.sin(an).toFixed(3)
+		}
+		else if (t== 'cos'){
+			var ans = Math.cos(an).toFixed(3)
+		}
+		else if (t== 'tan'){
+			var ans = Math.tan(an).toFixed(3)
+		}
+		else if (t== 'sec'){
+			var ans = Math.cos(an).toFixed(3)
+			var ans = 1/ans
+		}
+		else if (t== 'cosec'){
+			var ans = Math.sin(an).toFixed(3)
+			var ans = 1/ans
+		}
+		else if (t== 'cot'){
+			var ans = Math.tan(an).toFixed(3)
+			var ans = 1/ans
+		}
+		document.getElementById('a7').innerHTML = t+"("+an1+"°) = "+ans
+	}
+</script>
+</html>
